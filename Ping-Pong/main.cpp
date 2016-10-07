@@ -1,10 +1,15 @@
-#include <SFML/Graphics.hpp>
+#include "gameState.h"
+#include "mainMenu.h"
+#include <Windows.h>
+
+gameState mainState;
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	sf::RenderWindow window(sf::VideoMode(1200, 600), "mrr");
+
+	mainState.setWindow(&window);
+	mainState.setState(new mainMenu());
 
 	while (window.isOpen())
 	{
@@ -15,9 +20,18 @@ int main()
 				window.close();
 		}
 
-		window.clear();
-		window.draw(shape);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+		{
+			mainState.~gameState();
+		}
+
+		window.clear(sf::Color::Black);
+		mainState.Update();
+		mainState.Render();
+
 		window.display();
+
+		Sleep(10);
 	}
 
 	return 0;

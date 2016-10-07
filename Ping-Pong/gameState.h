@@ -15,7 +15,7 @@ public:
 	{
 		if (this->state != NULL)
 		{
-			this->state->Update();
+			this->state->Update(this->window);
 		}
 	}
 
@@ -23,7 +23,7 @@ public:
 	{
 		if (this->state != NULL)
 		{
-			this->state->Render();
+			this->state->Render(this->window);
 		}
 	}
 
@@ -60,3 +60,5 @@ private:
 	sf::RenderWindow* window;
 	State* state;
 };
+
+extern gameState mainState;
