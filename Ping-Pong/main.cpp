@@ -22,21 +22,21 @@ int main()
 				window.close();
 		}
 
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-		{
-			mainState.~gameState();
-		}
+		window.clear(sf::Color::Black);
+		mainState.Update();
+		mainState.Render();
+
+		window.display();
 
 		if (gameOver)
 		{
 			mainState.~gameState();
 		}
 
-		window.clear(sf::Color::Black);
-		mainState.Update();
-		mainState.Render();
-
-		window.display();
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+		{
+			mainState.~gameState();
+		}
 	}
 
 	return 0;
