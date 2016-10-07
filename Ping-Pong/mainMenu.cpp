@@ -3,7 +3,6 @@
 
 mainMenu::mainMenu()
 {
-
 }
 
 void mainMenu::Initiate(sf::RenderWindow* window)
@@ -15,7 +14,7 @@ void mainMenu::Initiate(sf::RenderWindow* window)
 	this->downKey = true;
 
 	this->font = new sf::Font();
-	this->font->loadFromFile("arial.ttf");
+	this->font->loadFromFile("resources/font.ttf");
 	
 	this->title = new sf::Text();
 	this->title->setFont(*this->font);
@@ -83,12 +82,30 @@ void mainMenu::Update(sf::RenderWindow* window)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && this->upKey)
 	{
 		selected -= 1;
+		Sleep(100);
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && this->downKey)
 	{
 		selected += 1;
+		Sleep(100);
 	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+	{
+		switch (this->selected)
+		{
+		case 1:
+			mainState.setState(new playMenu());
+			break;
+		case 2:
+			break;
+		case 3:
+			gameOver = true;
+			break;
+		}
+	}
+
 }
 
 void mainMenu::Destroy(sf::RenderWindow* window)

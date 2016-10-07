@@ -1,12 +1,14 @@
 #include "gameState.h"
 #include "mainMenu.h"
-#include <Windows.h>
 
 gameState mainState;
+bool gameOver = false;
 
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1200, 600), "mrr");
+
+	window.setFramerateLimit(30);
 
 	mainState.setWindow(&window);
 	mainState.setState(new mainMenu());
@@ -25,13 +27,16 @@ int main()
 			mainState.~gameState();
 		}
 
+		if (gameOver)
+		{
+			mainState.~gameState();
+		}
+
 		window.clear(sf::Color::Black);
 		mainState.Update();
 		mainState.Render();
 
 		window.display();
-
-		Sleep(10);
 	}
 
 	return 0;

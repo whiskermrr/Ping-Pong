@@ -1,15 +1,14 @@
 #pragma once
 #include "state.h"
-#include "playMenu.h"
-#include "gameState.h"
+#include <Windows.h>
 
 
-class mainMenu :
+class playMenu :
 	public State
 {
 public:
-	
-	mainMenu();
+
+	playMenu();
 	void Initiate(sf::RenderWindow* window);
 	void Update(sf::RenderWindow* window);
 	void Render(sf::RenderWindow* window);
@@ -19,9 +18,9 @@ private:
 
 	sf::Font* font;
 	sf::Text* title;
-	sf::Text* play;
-	sf::Text* options;
-	sf::Text* quit;
+	sf::Text* singlePlayer;
+	sf::Text* multiPlayer;
+	sf::Text* back;
 
 	int selected;
 	int titleSize;
