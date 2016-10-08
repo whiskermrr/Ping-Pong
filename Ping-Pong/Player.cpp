@@ -25,15 +25,14 @@ Player::Player(unsigned int objectNumber)
 
 void Player::Update()
 {
-
 	switch (this->objectNumber)
 	{
 	case 1:
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && canMoveUp)
-			this->move(0.f, -10.f);
+			this->velocity.y -= 10.f;
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && canMoveDown)
-			this->move(0.f, 10.f);
+			this->velocity.x += 10.f;
 
 		break;
 
