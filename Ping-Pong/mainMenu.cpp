@@ -96,11 +96,13 @@ void mainMenu::Update(sf::RenderWindow* window)
 		switch (this->selected)
 		{
 		case 1:
+			Sleep(200);
 			mainState.setState(new playMenu());
 			break;
 		case 2:
 			break;
 		case 3:
+			Sleep(200);
 			gameOver = true;
 			break;
 		}

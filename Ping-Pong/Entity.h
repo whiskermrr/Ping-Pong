@@ -1,13 +1,14 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <string>
 
 class Entity : public sf::Sprite
 {
 public:
 
 	Entity();
-	void LoadTexture();
+	void LoadTexture(std::string file);
 	void Update();
 	bool CheckCollision(Entity* gameObject);
 	void Destroy();

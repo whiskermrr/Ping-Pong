@@ -1,4 +1,5 @@
 #include "playMenu.h"
+#include "mainMenu.h"
 
 
 playMenu::playMenu()
@@ -90,6 +91,28 @@ void playMenu::Update(sf::RenderWindow* window)
 	{
 		selected += 1;
 		Sleep(100);
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
+	{
+		switch (this->selected)
+		{
+		case 1:
+			Sleep(200);
+			mainState.setState(new mainGame());
+			break;
+
+		case 2:
+			break;
+
+		case 3:
+			Sleep(200);
+			mainState.setState(new mainMenu());
+			break;
+
+		default:
+			break;
+		}
 	}
 }
 

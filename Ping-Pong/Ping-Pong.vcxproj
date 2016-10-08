@@ -70,13 +70,18 @@
   <ItemGroup>
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainGame.cpp" />
     <ClCompile Include="mainMenu.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="playMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gameState.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="mainGame.h" />
     <ClInclude Include="mainMenu.h" />
+    <ClInclude Include="Paddle.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="playMenu.h" />
     <ClInclude Include="state.h" />
   </ItemGroup>
