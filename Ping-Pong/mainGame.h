@@ -1,6 +1,7 @@
 #pragma once
 #include "state.h"
 #include "Player.h"
+#include "Ball.h"
 
 
 class mainGame :
@@ -19,5 +20,6 @@ private:
 
 	Player* playerOne;
 	Player* playerTwo;
+	Ball* ball;
 };
 
