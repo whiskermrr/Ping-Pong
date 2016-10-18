@@ -16,3 +16,6 @@ private:
 	Player* playerTwo;
 };
 
+extern float ballSpeedX;
+extern float ballSpeedY;
+
