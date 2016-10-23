@@ -73,6 +73,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainGame.cpp" />
     <ClCompile Include="mainMenu.cpp" />
+    <ClCompile Include="optionsMenu.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="playMenu.cpp" />
   </ItemGroup>
@@ -82,6 +83,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="mainGame.h" />
     <ClInclude Include="mainMenu.h" />
+    <ClInclude Include="optionsMenu.h" />
     <ClInclude Include="Paddle.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="playMenu.h" />

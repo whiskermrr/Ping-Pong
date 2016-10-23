@@ -4,8 +4,8 @@
 
 gameState mainState;
 bool gameOver = false;
-float ballSpeedX = 2.f;
-float ballSpeedY = 2.f;
+float ballSpeedX = 7.6f;
+float ballSpeedY = 7.6f;
 
 int main()
 {

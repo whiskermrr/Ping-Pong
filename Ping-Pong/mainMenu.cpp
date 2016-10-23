@@ -20,28 +20,28 @@ void mainMenu::Initiate(sf::RenderWindow* window)
 	this->title->setFont(*this->font);
 	this->title->setCharacterSize(titleSize);
 	this->title->setOrigin(this->title->getGlobalBounds().width / 2, this->title->getGlobalBounds().height / 2);
-	this->title->setPosition(window->getSize().x / 2, window->getSize().y / 2 - 250);
+	this->title->setPosition(window->getSize().x / 4, window->getSize().y / 2 - 250);
 	this->title->setString("Ping-Pong");
 
 	this->play = new sf::Text();
 	this->play->setFont(*this->font);
 	this->play->setCharacterSize(charSize);
 	this->play->setOrigin(this->play->getGlobalBounds().width / 2, this->play->getGlobalBounds().height / 2);
-	this->play->setPosition(window->getSize().x / 2, window->getSize().y / 2);
+	this->play->setPosition(window->getSize().x / 4, window->getSize().y / 2);
 	this->play->setString("Play");
 
 	this->options = new sf::Text();
 	this->options->setFont(*this->font);
 	this->options->setCharacterSize(charSize);
 	this->options->setOrigin(this->options->getGlobalBounds().width / 2, this->options->getGlobalBounds().height / 2);
-	this->options->setPosition(window->getSize().x / 2, window->getSize().y / 2 + 70);
+	this->options->setPosition(window->getSize().x / 4, window->getSize().y / 2 + 70);
 	this->options->setString("Options");
 
 	this->quit = new sf::Text();
 	this->quit->setFont(*this->font);
 	this->quit->setCharacterSize(charSize);
 	this->quit->setOrigin(this->quit->getGlobalBounds().width / 2, this->quit->getGlobalBounds().height / 2);
-	this->quit->setPosition(window->getSize().x / 2, window->getSize().y / 2 + 140);
+	this->quit->setPosition(window->getSize().x / 4, window->getSize().y / 2 + 140);
 	this->quit->setString("Quit");
 }
 
@@ -68,6 +68,9 @@ void mainMenu::Render(sf::RenderWindow* window)
 	case 3:
 		this->quit->setColor(sf::Color::Red);
 		this->downKey = false;
+		break;
+
+	default:
 		break;
 	}
 
@@ -99,11 +102,18 @@ void mainMenu::Update(sf::RenderWindow* window)
 			Sleep(200);
 			mainState.setState(new playMenu());
 			break;
+
 		case 2:
+			Sleep(200);
+			mainState.setState(new optionsMenu());
 			break;
+
 		case 3:
 			Sleep(200);
 			gameOver = true;
+			break;
+
+		default:
 			break;
 		}
 	}

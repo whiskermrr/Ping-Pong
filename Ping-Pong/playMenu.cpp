@@ -21,28 +21,28 @@ void playMenu::Initiate(sf::RenderWindow* window)
 	this->title->setFont(*this->font);
 	this->title->setCharacterSize(titleSize);
 	this->title->setOrigin(this->title->getGlobalBounds().width / 2, this->title->getGlobalBounds().height / 2);
-	this->title->setPosition(window->getSize().x / 2, window->getSize().y / 2 - 250);
+	this->title->setPosition(window->getSize().x / 4, window->getSize().y / 2 - 250);
 	this->title->setString("Ping-Pong");
 
 	this->singlePlayer = new sf::Text();
 	this->singlePlayer->setFont(*this->font);
 	this->singlePlayer->setCharacterSize(charSize);
 	this->singlePlayer->setOrigin(this->singlePlayer->getGlobalBounds().width / 2, this->singlePlayer->getGlobalBounds().height / 2);
-	this->singlePlayer->setPosition(window->getSize().x / 2, window->getSize().y / 2);
+	this->singlePlayer->setPosition(window->getSize().x / 4, window->getSize().y / 2);
 	this->singlePlayer->setString("Single Player");
 
 	this->multiPlayer = new sf::Text();
 	this->multiPlayer->setFont(*this->font);
 	this->multiPlayer->setCharacterSize(charSize);
 	this->multiPlayer->setOrigin(this->multiPlayer->getGlobalBounds().width / 2, this->multiPlayer->getGlobalBounds().height / 2);
-	this->multiPlayer->setPosition(window->getSize().x / 2, window->getSize().y / 2 + 70);
+	this->multiPlayer->setPosition(window->getSize().x / 4, window->getSize().y / 2 + 70);
 	this->multiPlayer->setString("Multi Player");
 
 	this->back = new sf::Text();
 	this->back->setFont(*this->font);
 	this->back->setCharacterSize(charSize);
 	this->back->setOrigin(this->back->getGlobalBounds().width / 2, this->back->getGlobalBounds().height / 2);
-	this->back->setPosition(window->getSize().x / 2, window->getSize().y / 2 + 140);
+	this->back->setPosition(window->getSize().x / 4, window->getSize().y / 2 + 140);
 	this->back->setString("Back");
 }
 
@@ -70,6 +70,9 @@ void playMenu::Render(sf::RenderWindow* window)
 	case 3:
 		this->back->setColor(sf::Color::Red);
 		this->downKey = false;
+		break;
+
+	default:
 		break;
 	}
 

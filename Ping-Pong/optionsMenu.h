@@ -1,16 +1,19 @@
 #pragma once
+
 #include "state.h"
-#include "playMenu.h"
 #include "gameState.h"
-#include "optionsMenu.h"
+#include "mainMenu.h"
 
+enum Option{
 
-class mainMenu :
-	public State
+	EASY, MEDIUM, ADVANCED
+};
+
+class optionsMenu : public State
 {
 public:
-	
-	mainMenu();
+
+	optionsMenu();
 	void Initiate(sf::RenderWindow* window);
 	void Update(sf::RenderWindow* window);
 	void Render(sf::RenderWindow* window);
@@ -20,18 +23,22 @@ private:
 
 	sf::Font* font;
 	sf::Text* title;
-	sf::Text* play;
-	sf::Text* options;
-	sf::Text* quit;
+	sf::Text* botDifficult;
+	sf::Text* ballDifficult;
+	sf::Text* back;
 
 	int selected;
+	int selectedBotDifficult;
+	int selectedBallDifficult;
 	int titleSize;
 	int charSize;
 
 	bool upKey;
 	bool downKey;
-};
+	bool rightBotKey;
+	bool leftBotKey;
+	bool rightBallKey;
+	bool leftBallKey;
 
-extern float ballSpeedY;
-extern float ballSpeedX;
+};
 

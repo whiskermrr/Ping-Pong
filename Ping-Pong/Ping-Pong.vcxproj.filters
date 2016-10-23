@@ -36,6 +36,9 @@
     <ClCompile Include="Ball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="optionsMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="state.h">
@@ -63,6 +66,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Ball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="optionsMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
