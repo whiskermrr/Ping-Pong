@@ -85,13 +85,13 @@ void mainMenu::Update(sf::RenderWindow* window)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) && this->upKey)
 	{
 		selected -= 1;
-		Sleep(100);
+		Sleep(200);
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) && this->downKey)
 	{
 		selected += 1;
-		Sleep(100);
+		Sleep(200);
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return))
@@ -110,7 +110,7 @@ void mainMenu::Update(sf::RenderWindow* window)
 
 		case 3:
 			Sleep(200);
-			gameOver = true;
+			gameExit = true;
 			break;
 
 		default:

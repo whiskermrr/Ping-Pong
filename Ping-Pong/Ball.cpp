@@ -1,19 +1,22 @@
 #include "Ball.h"
 
 
-Ball::Ball(Player* playerOne, Player* playerTwo)
+Ball::Ball(Player* playerOne, Player* playerTwo, Score* scorePlayerOne, Score* scorePlayerTwo)
 {
 	this->playerOne = playerOne;
 	this->playerTwo = playerTwo;
+	this->scorePlayerOne = scorePlayerOne;
+	this->scorePlayerTwo = scorePlayerTwo;
 	this->velocity.y = ballSpeedY;
 	this->velocity.x = ballSpeedX;
 
-	this->LoadTexture("ball.png");
+	this->LoadTexture("ball2.png");
+
+	this->setScale(30 / this->getGlobalBounds().width, 30 / this->getGlobalBounds().height);
 }
 
 void Ball::Update()
 {
-
 	//ball goes down
 	if (this->velocity.y > 0)
 	{
@@ -31,21 +34,21 @@ void Ball::Update()
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerTwo->getPosition().y + 40 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerTwo->getPosition().y + 80)
 			{
-				this->velocity.y = 1.3f * ballSpeedY;
+				this->velocity.y = 1.0f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerTwo->getPosition().y + 80 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerTwo->getPosition().y + 120)
 			{
-				this->velocity.y = ballSpeedY;
+				this->velocity.y =  0.7f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerTwo->getPosition().y + 120 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerTwo->getPosition().y + 160)
 			{
-				this->velocity.y = 1.3f * ballSpeedY;
+				this->velocity.y = 1.0f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
@@ -70,21 +73,21 @@ void Ball::Update()
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerOne->getPosition().y + 40 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerOne->getPosition().y + 80)
 			{
-				this->velocity.y = 1.3f * ballSpeedY;
+				this->velocity.y = 1.0f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerOne->getPosition().y + 80 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerOne->getPosition().y + 120)
 			{
-				this->velocity.y = ballSpeedY;
+				this->velocity.y = 0.7f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerOne->getPosition().y + 120 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerOne->getPosition().y + 160)
 			{
-				this->velocity.y = 1.3f * ballSpeedY;
+				this->velocity.y = 1.0f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
@@ -104,7 +107,7 @@ void Ball::Update()
 	//ball goes up
 	else if (this->velocity.y < 0)
 	{
-
+		//collision with player Two
 		if (this->velocity.x > 0 && this->CheckCollision(this->playerTwo))
 		{
 			if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerTwo->getPosition().y &&
@@ -117,21 +120,21 @@ void Ball::Update()
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerTwo->getPosition().y + 40 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerTwo->getPosition().y + 80)
 			{
-				this->velocity.y = -1.3f * ballSpeedY;
+				this->velocity.y = -1.0f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerTwo->getPosition().y + 80 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerTwo->getPosition().y + 120)
 			{
-				this->velocity.y = -ballSpeedY;
+				this->velocity.y = -0.7f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerTwo->getPosition().y + 120 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerTwo->getPosition().y + 160)
 			{
-				this->velocity.y = -1.3f * ballSpeedY;
+				this->velocity.y = -1.0f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
@@ -156,21 +159,21 @@ void Ball::Update()
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerOne->getPosition().y + 40 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerOne->getPosition().y + 80)
 			{
-				this->velocity.y = -1.3f * ballSpeedY;
+				this->velocity.y = -1.0f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerOne->getPosition().y + 80 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerOne->getPosition().y + 120)
 			{
-				this->velocity.y = ballSpeedY;
+				this->velocity.y = -0.7f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
 			else if (this->getPosition().y + this->getGlobalBounds().height / 2 >= this->playerOne->getPosition().y + 120 &&
 					this->getPosition().y + this->getGlobalBounds().height / 2 < this->playerOne->getPosition().y + 160)
 			{
-				this->velocity.y = -1.3f * ballSpeedY;
+				this->velocity.y = -1.0f * ballSpeedY;
 				this->velocity.x = -this->velocity.x;
 			}
 
@@ -185,6 +188,18 @@ void Ball::Update()
 		else if (this->getPosition().y <= 0)
 			this->velocity.y = -this->velocity.y;
 
+	}
+
+	if (this->getPosition().x < this->playerOne->getPosition().x)
+	{
+		this->scorePlayerTwo->AddPoint();
+		reset = true;
+	}
+
+	else if (this->getPosition().x > this->playerTwo->getPosition().x)
+	{
+		this->scorePlayerOne->AddPoint();
+		reset = true;
 	}
 
 	Entity::Update();

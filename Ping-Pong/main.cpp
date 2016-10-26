@@ -1,15 +1,18 @@
 #include "gameState.h"
 #include "mainMenu.h"
 #include "mainGame.h"
+#include "testState.h"
 
 gameState mainState;
-bool gameOver = false;
+bool gameExit = false;
+bool reset = false;
 float ballSpeedX = 7.6f;
 float ballSpeedY = 7.6f;
+sf::Vector2f screenDimensions(1200, 600);
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(1200, 600), "mrr");
+	sf::RenderWindow window(sf::VideoMode(screenDimensions.x, screenDimensions.y), "mrr");
 
 	window.setFramerateLimit(60);
 
@@ -31,7 +34,7 @@ int main()
 
 		window.display();
 
-		if (gameOver)
+		if (gameExit)
 		{
 			window.close();
 		}

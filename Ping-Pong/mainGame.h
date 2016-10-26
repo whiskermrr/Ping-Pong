@@ -2,6 +2,9 @@
 #include "state.h"
 #include "Player.h"
 #include "Ball.h"
+#include "Background.h"
+#include "Score.h"
+#include "CountingDown.h"
 
 
 class mainGame :
@@ -13,6 +16,7 @@ public:
 	void Update(sf::RenderWindow* window);
 	void Render(sf::RenderWindow* window);
 	void Destroy(sf::RenderWindow* window);
+	void Reset(sf::RenderWindow* window);
 
 private:
 
@@ -21,5 +25,9 @@ private:
 	Player* playerOne;
 	Player* playerTwo;
 	Ball* ball;
+	Background* background;
+	Score* scorePlayerOne;
+	Score* scorePlayerTwo;
+	CountingDown* counter;
 };
 

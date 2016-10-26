@@ -62,4 +62,4 @@ private:
 };
 
 extern gameState mainState;
-extern bool gameOver;
+extern bool gameExit;

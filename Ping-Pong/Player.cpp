@@ -8,16 +8,18 @@ Player::Player(unsigned int objectNumber)
 	switch (this->objectNumber)
 	{
 	case 1:
-		this->LoadTexture("paddleOne.png");
+		this->LoadTexture("paddle1.png");
 		break;
 
 	case 2:
-		this->LoadTexture("paddleTwo.png");
+		this->LoadTexture("paddle2.png");
 		break;
 
 	default:
 		break;
 	}
+
+	this->setScale(50 / this->getGlobalBounds().width, 200 / this->getGlobalBounds().height);
 
 	this->canMoveUp = true;
 	this->canMoveDown = true;
