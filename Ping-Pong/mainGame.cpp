@@ -36,7 +36,7 @@ void mainGame::Render(sf::RenderWindow* window)
 	window->draw(*this->scorePlayerOne);
 	window->draw(*this->scorePlayerTwo);
 
-	if (reset)
+	if (reset && !gameOver)
 		this->Reset(window);
 }
 
@@ -93,5 +93,3 @@ void mainGame::Reset(sf::RenderWindow* window)
 	this->counter->setCounter(3);
 	reset = false;
 }
-
-extern bool reset;

@@ -31,3 +31,4 @@ private:
 	CountingDown* counter;
 };
 
+extern bool reset;

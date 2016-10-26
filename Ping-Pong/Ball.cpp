@@ -202,5 +202,10 @@ void Ball::Update()
 		reset = true;
 	}
 
+	if (this->scorePlayerOne->getScore() > 2 || this->scorePlayerTwo->getScore() > 2)
+	{
+		gameOver = true;
+	}
+
 	Entity::Update();
 }

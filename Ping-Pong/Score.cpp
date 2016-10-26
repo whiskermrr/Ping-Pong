@@ -15,6 +15,11 @@ void Score::AddPoint()
 	this->value += 1;
 }
 
+int Score::getScore()
+{
+	return this->value;
+}
+
 void Score::Update()
 {
 	this->setString(std::to_string(this->value));

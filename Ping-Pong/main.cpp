@@ -5,6 +5,7 @@
 
 gameState mainState;
 bool gameExit = false;
+bool gameOver = false;
 bool reset = false;
 float ballSpeedX = 7.6f;
 float ballSpeedY = 7.6f;
@@ -26,6 +27,12 @@ int main()
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+		}
+
+		if (gameOver)
+		{
+			mainState.setState(new mainMenu());
+			gameOver = false;
 		}
 
 		window.clear(sf::Color::Black);

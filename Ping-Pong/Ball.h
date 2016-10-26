@@ -23,4 +23,5 @@ private:
 extern float ballSpeedX;
 extern float ballSpeedY;
 extern bool reset;
+extern bool gameOver;
 

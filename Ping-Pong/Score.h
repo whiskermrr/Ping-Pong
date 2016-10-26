@@ -10,7 +10,8 @@ public:
 	Score(sf::Font &font);
 	void AddPoint();
 	void Update();
-
+	int getScore();
+	
 private:
 	int value;
 };
