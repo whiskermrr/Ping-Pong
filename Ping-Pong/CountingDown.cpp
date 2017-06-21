@@ -4,7 +4,7 @@
 CountingDown::CountingDown(sf::Font &font) : sf::Text("3", font, 120)
 {
 	this->counter = 3;
-	this->setColor(sf::Color(128, 128, 128));
+	this->setFillColor(sf::Color(128, 128, 128));
 	this->setPosition(sf::Vector2f(600, 300));
 	this->setOrigin(this->getGlobalBounds().width / 2, this->getGlobalBounds().height / 2);
 }

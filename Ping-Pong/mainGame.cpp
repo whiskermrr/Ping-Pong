@@ -25,6 +25,9 @@ void mainGame::Initiate(sf::RenderWindow* window)
 
 	this->ball = new Ball(playerOne, playerTwo, scorePlayerOne, scorePlayerTwo);
 	this->ball->setPosition(window->getSize().x / 2, window->getSize().y / 2);
+
+	this->ball2 = new Ball(playerOne, playerTwo, scorePlayerOne, scorePlayerTwo);
+	this->ball2->setPosition(window->getSize().x / 4, window->getSize().y / 4);
 }
 
 void mainGame::Render(sf::RenderWindow* window)
@@ -35,6 +38,7 @@ void mainGame::Render(sf::RenderWindow* window)
 	window->draw(*this->ball);
 	window->draw(*this->scorePlayerOne);
 	window->draw(*this->scorePlayerTwo);
+	window->draw(*this->ball2);
 
 	if (reset && !gameOver)
 		this->Reset(window);
@@ -46,6 +50,7 @@ void mainGame::Update(sf::RenderWindow* window)
 	this->playerOne->Update();
 	this->playerTwo->Update();
 	this->ball->Update();
+	this->ball2->Update();
 	this->scorePlayerOne->Update();
 	this->scorePlayerTwo->Update();
 }
@@ -60,6 +65,7 @@ void mainGame::Destroy(sf::RenderWindow* window)
 	delete this->scorePlayerOne;
 	delete this->scorePlayerTwo;
 	delete this->counter;
+	delete this->ball2;
 }
 
 void mainGame::Reset(sf::RenderWindow* window)

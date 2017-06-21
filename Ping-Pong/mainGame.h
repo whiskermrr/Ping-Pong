@@ -29,6 +29,7 @@ private:
 	Score* scorePlayerOne;
 	Score* scorePlayerTwo;
 	CountingDown* counter;
+	Ball* ball2;
 };
 
 extern bool reset;

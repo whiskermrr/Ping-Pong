@@ -47,26 +47,26 @@ void mainMenu::Initiate(sf::RenderWindow* window)
 
 void mainMenu::Render(sf::RenderWindow* window)
 {
-	this->title->setColor(sf::Color::White);
-	this->play->setColor(sf::Color::White);
-	this->options->setColor(sf::Color::White);
-	this->quit->setColor(sf::Color::White);
+	this->title->setFillColor(sf::Color::White);
+	this->play->setFillColor(sf::Color::White);
+	this->options->setFillColor(sf::Color::White);
+	this->quit->setFillColor(sf::Color::White);
 
 	switch (this->selected)
 	{
 	case 1:
-		this->play->setColor(sf::Color::Red);
+		this->play->setFillColor(sf::Color::Red);
 		this->upKey = false;
 		break;
 
 	case 2:
-		this->options->setColor(sf::Color::Red);
+		this->options->setFillColor(sf::Color::Red);
 		this->upKey = true;
 		this->downKey = true;
 		break;
 
 	case 3:
-		this->quit->setColor(sf::Color::Red);
+		this->quit->setFillColor(sf::Color::Red);
 		this->downKey = false;
 		break;
 

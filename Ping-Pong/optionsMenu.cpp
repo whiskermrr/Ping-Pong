@@ -55,10 +55,10 @@ void optionsMenu::Initiate(sf::RenderWindow* window)
 
 void optionsMenu::Render(sf::RenderWindow* window)
 {
-	this->title->setColor(sf::Color::White);
-	this->botDifficult->setColor(sf::Color::White);
-	this->ballDifficult->setColor(sf::Color::White);
-	this->back->setColor(sf::Color::White);
+	this->title->setFillColor(sf::Color::White);
+	this->botDifficult->setFillColor(sf::Color::White);
+	this->ballDifficult->setFillColor(sf::Color::White);
+	this->back->setFillColor(sf::Color::White);
 
 
 	switch (this->selectedBallDifficult)
@@ -114,18 +114,18 @@ void optionsMenu::Render(sf::RenderWindow* window)
 	switch (this->selected)
 	{
 	case 1:
-		this->botDifficult->setColor(sf::Color::Red);
+		this->botDifficult->setFillColor(sf::Color::Red);
 		this->upKey = false;
 		break;
 
 	case 2:
-		this->ballDifficult->setColor(sf::Color::Red);
+		this->ballDifficult->setFillColor(sf::Color::Red);
 		this->upKey = true;
 		this->downKey = true;
 		break;
 
 	case 3:
-		this->back->setColor(sf::Color::Red);
+		this->back->setFillColor(sf::Color::Red);
 		this->downKey = false;
 		break;
 

@@ -49,26 +49,26 @@ void playMenu::Initiate(sf::RenderWindow* window)
 
 void playMenu::Render(sf::RenderWindow* window)
 {
-	this->title->setColor(sf::Color::White);
-	this->singlePlayer->setColor(sf::Color::White);
-	this->multiPlayer->setColor(sf::Color::White);
-	this->back->setColor(sf::Color::White);
+	this->title->setFillColor(sf::Color::White);
+	this->singlePlayer->setFillColor(sf::Color::White);
+	this->multiPlayer->setFillColor(sf::Color::White);
+	this->back->setFillColor(sf::Color::White);
 
 	switch (this->selected)
 	{
 	case 1:
-		this->singlePlayer->setColor(sf::Color::Red);
+		this->singlePlayer->setFillColor(sf::Color::Red);
 		this->upKey = false;
 		break;
 
 	case 2:
-		this->multiPlayer->setColor(sf::Color::Red);
+		this->multiPlayer->setFillColor(sf::Color::Red);
 		this->upKey = true;
 		this->downKey = true;
 		break;
 
 	case 3:
-		this->back->setColor(sf::Color::Red);
+		this->back->setFillColor(sf::Color::Red);
 		this->downKey = false;
 		break;
 

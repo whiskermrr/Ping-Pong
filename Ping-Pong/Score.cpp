@@ -6,7 +6,7 @@ Score::Score(sf::Font &font)
 	this->value = 0;
 	this->setCharacterSize(80);
 	this->setFont(font);
-	this->setColor(sf::Color(128, 128, 128));
+	this->setFillColor(sf::Color(128, 128, 128));
 	this->setString(std::to_string(this->value));
 }
 
