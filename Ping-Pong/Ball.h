@@ -8,13 +8,13 @@ class Ball :
 	public Entity
 {
 public:
-	Ball(Player* playerOne, Player* playerTwo, Score* scorePlayerOne, Score* scorePlayerTwo);
+	Ball(Paddle* playerOne, Paddle* playerTwo, Score* scorePlayerOne, Score* scorePlayerTwo);
 	void Update();
 
 private:
 
-	Player* playerOne;
-	Player* playerTwo;
+	Paddle* playerOne;
+	Paddle* playerTwo;
 	Score* scorePlayerOne;
 	Score* scorePlayerTwo;
 

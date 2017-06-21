@@ -1,15 +1,16 @@
 #pragma once
 #include "Paddle.h"
+#include "Ball.h"
 
 
-class Player :
+class PlayerAI :
 	public Paddle
 {
 public:
-	Player(unsigned int objectNumber);
+	PlayerAI(Ball* ball);
 	void Update();
 
 public:
-	int objectNumber;
+	Ball* ball;
 };
 

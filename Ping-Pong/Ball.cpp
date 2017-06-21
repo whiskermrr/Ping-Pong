@@ -1,7 +1,7 @@
 #include "Ball.h"
 
 
-Ball::Ball(Player* playerOne, Player* playerTwo, Score* scorePlayerOne, Score* scorePlayerTwo)
+Ball::Ball(Paddle* playerOne, Paddle* playerTwo, Score* scorePlayerOne, Score* scorePlayerTwo)
 {
 	this->playerOne = playerOne;
 	this->playerTwo = playerTwo;

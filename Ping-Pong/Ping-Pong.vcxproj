@@ -76,7 +76,9 @@
     <ClCompile Include="mainGame.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="optionsMenu.cpp" />
+    <ClCompile Include="paddle.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerAI.cpp" />
     <ClCompile Include="playMenu.cpp" />
     <ClCompile Include="Score.cpp" />
     <ClCompile Include="testState.cpp" />
@@ -92,6 +94,7 @@
     <ClInclude Include="optionsMenu.h" />
     <ClInclude Include="Paddle.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerAI.h" />
     <ClInclude Include="playMenu.h" />
     <ClInclude Include="Score.h" />
     <ClInclude Include="state.h" />

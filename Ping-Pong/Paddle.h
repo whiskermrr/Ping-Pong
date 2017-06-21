@@ -5,9 +5,14 @@
 class Paddle :
 	public Entity
 {
+
 public:
 
-	int objectNumber;
+	Paddle();
+	void Update();
+
+public:
+
 	bool canMoveUp;
 	bool canMoveDown;
 };
