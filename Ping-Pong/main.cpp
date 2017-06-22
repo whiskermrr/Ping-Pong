@@ -7,6 +7,7 @@ gameState mainState;
 bool gameExit = false;
 bool gameOver = false;
 bool reset = false;
+int typeOfGame = 0;
 float ballSpeedX = 7.6f;
 float ballSpeedY = 7.6f;
 sf::Vector2f screenDimensions(1200, 600);

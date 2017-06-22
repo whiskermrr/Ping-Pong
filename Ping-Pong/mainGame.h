@@ -5,6 +5,7 @@
 #include "Background.h"
 #include "Score.h"
 #include "CountingDown.h"
+#include "PlayerAI.h"
 
 
 class mainGame :
@@ -23,7 +24,7 @@ private:
 	sf::Font* font;
 
 	Player* playerOne;
-	Player* playerTwo;
+	PlayerAI* playerTwo;
 	Ball* ball;
 	Background* background;
 	Score* scorePlayerOne;
@@ -33,3 +34,4 @@ private:
 };
 
 extern bool reset;
+extern int typeOfGame;

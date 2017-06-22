@@ -1,4 +1,5 @@
 #pragma once
+#include <stdlib.h>
 #include "Entity.h"
 #include "Player.h"
 #include "Score.h"

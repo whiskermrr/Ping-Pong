@@ -103,9 +103,12 @@ void playMenu::Update(sf::RenderWindow* window)
 		case 1:
 			Sleep(200);
 			mainState.setState(new mainGame());
+			typeOfGame = 0;
 			break;
 
 		case 2:
+			mainState.setState(new mainGame());
+			typeOfGame = 1;
 			break;
 
 		case 3:

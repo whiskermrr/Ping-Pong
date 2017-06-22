@@ -7,8 +7,9 @@ class PlayerAI :
 	public Paddle
 {
 public:
-	PlayerAI(Ball* ball);
+	PlayerAI();
 	void Update();
+	void setBall(Ball* ball);
 
 public:
 	Ball* ball;

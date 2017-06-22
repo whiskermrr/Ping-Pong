@@ -7,8 +7,16 @@ Ball::Ball(Paddle* playerOne, Paddle* playerTwo, Score* scorePlayerOne, Score* s
 	this->playerTwo = playerTwo;
 	this->scorePlayerOne = scorePlayerOne;
 	this->scorePlayerTwo = scorePlayerTwo;
-	this->velocity.y = ballSpeedY;
-	this->velocity.x = ballSpeedX;
+
+	srand(time(NULL));
+	int x;
+	int y;
+
+	x = (rand() % 2 == 0) ? -1 : 1;
+	y = (rand() % 2 == 0) ? -1 : 1;
+
+	this->velocity.y = x * ballSpeedY;
+	this->velocity.x = y * ballSpeedX;
 
 	this->LoadTexture("ball2.png");
 
@@ -190,13 +198,13 @@ void Ball::Update()
 
 	}
 
-	if (this->getPosition().x < this->playerOne->getPosition().x)
+	if (this->getPosition().x < this->playerOne->getPosition().x - 130)
 	{
 		this->scorePlayerTwo->AddPoint();
 		reset = true;
 	}
 
-	else if (this->getPosition().x > this->playerTwo->getPosition().x)
+	else if (this->getPosition().x > this->playerTwo->getPosition().x + 130)
 	{
 		this->scorePlayerOne->AddPoint();
 		reset = true;

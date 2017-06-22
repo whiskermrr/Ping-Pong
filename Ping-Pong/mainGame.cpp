@@ -20,11 +20,13 @@ void mainGame::Initiate(sf::RenderWindow* window)
 	this->playerOne = new Player(1);
 	this->playerOne->setPosition(130, window->getSize().y / 2);
 
-	this->playerTwo = new Player(2);
+	this->playerTwo = new PlayerAI();
 	this->playerTwo->setPosition(window->getSize().x - 130, window->getSize().y / 2);
 
 	this->ball = new Ball(playerOne, playerTwo, scorePlayerOne, scorePlayerTwo);
 	this->ball->setPosition(window->getSize().x / 2, window->getSize().y / 2);
+
+	this->playerTwo->setBall(this->ball);
 }
 
 void mainGame::Render(sf::RenderWindow* window)
@@ -67,7 +69,15 @@ void mainGame::Reset(sf::RenderWindow* window)
 	this->playerOne->setPosition(130, window->getSize().y / 2);
 	this->playerTwo->setPosition(window->getSize().x - 130, window->getSize().y / 2);
 	this->ball->setPosition(window->getSize().x / 2, window->getSize().y / 2);
-	this->ball->velocity = sf::Vector2f(ballSpeedX, ballSpeedY);
+
+	srand(time(NULL));
+	int x;
+	int y;
+
+	x = (rand() % 2 == 0) ? -1 : 1;
+	y = (rand() % 2 == 0) ? -1 : 1;
+
+	this->ball->velocity = sf::Vector2f( x * ballSpeedX, y * ballSpeedY);
 
 	while (this->counter->getCounter() >= -1)
 	{

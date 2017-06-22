@@ -30,3 +30,4 @@ private:
 	bool downKey;
 };
 
+extern int typeOfGame;
